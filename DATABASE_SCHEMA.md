@@ -447,7 +447,7 @@ Address
 ### إعدادات قاعدة البيانات (من `.env`)
 
 ```
-DB_HOST=161.97.117.77
+DB_HOST=localhost
 DB_PORT=5432
 DB_NAME=dvdrental
 DB_USER=postgres
@@ -466,7 +466,7 @@ DB_PASSWORD=postgres123
 
 1. **الاتصال بقاعدة البيانات**
    ```bash
-   psql -h 161.97.117.77 -p 5432 -U postgres -d dvdrental
+   psql -h localhost -p 5432 -U postgres -d dvdrental
    ```
 
 2. **استكشاف الجداول**
