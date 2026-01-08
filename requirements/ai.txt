@@ -1,0 +1,14 @@
+# LangChain ecosystem (compatible with pydantic v2)
+langchain>=0.2.16
+langchain-core>=0.2.38
+langchain-community>=0.3.0
+langchain-openai>=0.1.23
+langchain-google-genai>=1.0.0
+
+# LangSmith (optional - disable via LANGCHAIN_TRACING_V2=false if issues)
+# Use version compatible with pydantic v2
+langsmith>=0.1.129,<0.2.0
+
+# OpenAI utils
+openai>=1.6.1,<2.0.0
+tiktoken==0.5.2

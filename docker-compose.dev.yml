@@ -1,0 +1,65 @@
+version: '3.8'
+
+# Development Docker Compose with hot reload
+# Usage: docker-compose -f docker-compose.dev.yml up
+
+services:
+  # FastAPI Application (Development with hot reload)
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: postgresql_chat_api_dev
+    # Note: ports are not needed with network_mode: "host"
+    # The service will be available on host:3300 directly
+    environment:
+      # API Settings
+      - API_TITLE=PostgreSQL Chat API
+      - API_VERSION=1.0.0
+      - API_PREFIX=/api/v1
+      - DEBUG=true
+      - LOG_LEVEL=DEBUG
+      
+      # Security
+      - API_KEY=${API_KEY:-}
+      
+      # PostgreSQL Database (External)
+      # Use POSTGRESQL_URL for full connection string, or individual settings
+      - POSTGRESQL_URL=${POSTGRESQL_URL:-}
+      - POSTGRESQL_DATABASE=${POSTGRESQL_DATABASE:-}
+      - DB_HOST=${DB_HOST:-localhost}
+      - DB_PORT=${DB_PORT:-5432}
+      - DB_NAME=${DB_NAME:-postgres}
+      - DB_USER=${DB_USER:-postgres}
+      - DB_PASSWORD=${DB_PASSWORD:-}
+      
+      # MongoDB (External)
+      # Use MONGO_URI for full connection string
+      - MONGO_URI=${MONGO_URI:-mongodb://admin:Strong%23Mongo!123@185.193.19.212:29966/admin}
+      - MONGO_DB_NAME=${MONGO_DB_NAME:-chat_db}
+      
+      # LLM - Gemini
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - GEMINI_MODEL=${GEMINI_MODEL:-gemini-2.0-flash}
+      
+      # LLM - OpenAI (Optional)
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      
+    env_file:
+      - .env
+    volumes:
+      - ./app:/app/app  # Mount for hot reload
+      - exports_data_dev:/app/exports
+      - charts_data_dev:/app/charts/generated
+      - cache_data_dev:/app/cache
+    command: uvicorn app.main:app --host 0.0.0.0 --port 3300 --reload
+    restart: unless-stopped
+    network_mode: "host"  # Use host network to access external databases
+
+volumes:
+  exports_data_dev:
+    driver: local
+  charts_data_dev:
+    driver: local
+  cache_data_dev:
+    driver: local

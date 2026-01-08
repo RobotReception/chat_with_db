@@ -1,0 +1,12 @@
+# Data Analysis & Visualization
+# ⚠️ Optional - Only install if needed for analytics/visualization features
+# For production API, consider using a separate analytics container
+
+numpy==1.26.0
+pandas==2.1.4
+openpyxl==3.1.2
+seaborn==0.13.2
+
+# PandasAI for chart generation (requires GEMINI_API_KEY)
+# Using latest version compatible with pandas 2.1.4 and Python 3.11
+pandasai>=2.0.0
