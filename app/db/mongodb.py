@@ -9,6 +9,7 @@ import os
 from datetime import datetime
 from decimal import Decimal
 import json
+from app.config import settings
 
 logger = logging.getLogger(__name__)
 
@@ -577,6 +578,6 @@ class MongoDBManager:
 
 # Global MongoDB manager instance
 mongodb_manager = MongoDBManager(
-    connection_string=os.getenv("MONGO_URI", "mongodb://localhost:27017/"),
-    database_name=os.getenv("MONGO_DB_NAME", "chat_db")
+    connection_string=settings.MONGO_URI,
+    database_name=settings.MONGO_DB_NAME
 )

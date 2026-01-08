@@ -29,6 +29,10 @@ class Settings(BaseSettings):
     POSTGRESQL_URL: Optional[str] = None  # Alternative: full connection string
     POSTGRESQL_DATABASE: Optional[str] = None  # Alternative database name
     
+    # MongoDB
+    MONGO_URI: str = "mongodb://localhost:27017/"
+    MONGO_DB_NAME: str = "chat_db"
+    
     @field_validator('DB_PORT', mode='before')
     @classmethod
     def parse_db_port(cls, v: Union[int, str, None]) -> int:

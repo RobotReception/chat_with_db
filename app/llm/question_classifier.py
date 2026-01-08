@@ -58,34 +58,50 @@ Examples of DATABASE-RELATED:
 - "ما هو متوسط سعر الإيجار للأفلام؟"
 
 **GENERAL (does NOT require database query):**
-A question is general if it:
-1. Asks for CONCEPTUAL EXPLANATIONS:
-   - "What is SQL?", "ما هو SQL?"
-   - "How does JOIN work?", "كيف يعمل JOIN?"
-   - "Explain normalization", "اشرح التطبيع"
+A question is general ONLY if it:
+1. Asks for PURE CONCEPTUAL EXPLANATIONS with NO data context:
+   - "What is SQL?" (without asking for actual SQL queries from database)
+   - "How does JOIN work?" (without asking to see actual JOIN results)
+   - "Explain normalization" (without asking for normalized data)
 
-2. Asks for BEST PRACTICES or THEORY:
-   - "What are best practices...", "ما هي أفضل الممارسات..."
-   - "How to optimize...", "كيفية تحسين..."
+2. Asks for BEST PRACTICES or THEORY with NO data request:
+   - "What are best practices..." (without asking to see actual examples from database)
+   - "How to optimize..." (without asking for actual optimization results)
 
-3. Asks about GENERAL KNOWLEDGE:
-   - "What is Python?", "ما هو Python?"
-   - "How does AI work?", "كيف يعمل الذكاء الاصطناعي?"
+3. Asks about COMPLETELY UNRELATED GENERAL KNOWLEDGE:
+   - "What is Python?" (not related to database at all)
+   - "How does AI work?" (not related to database at all)
+   - "What is the weather?" (not related to database)
 
-4. Asks for DEFINITIONS or MEANINGS:
-   - "What does X mean?", "ماذا يعني X?"
-   - "Define...", "عرّف..."
+4. Asks for DEFINITIONS with NO data context:
+   - "What does X mean?" (without asking to see X in database)
+   - "Define..." (without asking for actual examples)
 
-Examples of GENERAL:
-- "ما هو الفرق بين COUNT و SUM؟"
-- "كيف يعمل JOIN في SQL؟"
-- "ما هي أفضل الممارسات في تحليل البيانات؟"
-- "اشرح مفهوم قاعدة البيانات"
+**IMPORTANT: Even if a question seems general, classify as DATABASE-RELATED if:**
+- It can be answered by querying the database (even partially)
+- It mentions entities that might exist in the database (customers, films, orders, etc.)
+- It asks "what is" or "ما هو" about something that might be in the database
+- When in doubt, ALWAYS classify as DATABASE-RELATED to attempt data retrieval
+
+Examples of GENERAL (ONLY if completely unrelated to database):
+- "ما هو الفرق بين COUNT و SUM؟" (pure SQL concept, no data)
+- "كيف يعمل JOIN في SQL؟" (pure SQL concept, no data)
+- "ما هي أفضل الممارسات في تحليل البيانات؟" (theory, no specific data)
+- "ما هو Python؟" (completely unrelated to database)
+
+Examples that should be DATABASE-RELATED (even if they seem general):
+- "ما هي الجداول في قاعدة البيانات؟" → DATABASE (can query information_schema)
+- "ما هي أنواع البيانات المستخدمة؟" → DATABASE (can query schema)
+- "كم عدد الجداول؟" → DATABASE (can count tables)
+- "ما هي الفئات المتاحة؟" → DATABASE (can query categories table)
 
 **IMPORTANT:**
 - If the question asks about ACTUAL DATA VALUES → DATABASE
-- If the question asks about CONCEPTS/THEORY → GENERAL
-- When in doubt, classify as DATABASE if it mentions specific entities (customers, films, orders, etc.)
+- If the question asks about CONCEPTS/THEORY → GENERAL (ONLY if completely unrelated to database)
+- When in doubt, ALWAYS classify as DATABASE to attempt data retrieval
+- If the question can be answered (even partially) by querying the database → DATABASE
+- If the question mentions entities that might exist in database → DATABASE
+- Only classify as GENERAL if the question is completely unrelated to database or asks for pure theory with no data context
 
 User Question: {question}
 
