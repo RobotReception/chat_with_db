@@ -4,9 +4,15 @@
 
 # 💬 دردشة مع قاعدة البيانات - PostgreSQL Chat API
 
-نظام ذكي للتفاعل مع قواعد بيانات PostgreSQL باستخدام الذكاء الاصطناعي. يتيح للمستخدمين طرح الأسئلة باللغة الطبيعية والحصول على إجابات دقيقة مع إمكانية تصور البيانات وتحليلها إحصائياً.
+نظام ذكي للرد على استفسارات العملاء من خلال تقديم تحليلات واضحة ومباشرة من قاعدة البيانات. النظام مصمم خصيصاً للمستخدمين النهائيين غير التقنيين - يسألون أسئلة بسيطة ويحصلون على بيانات واضحة دون الحاجة لرؤية أي استعلامات SQL أو تفاصيل تقنية.
+
+**🎯 الهدف:** إجابة استفسارات العملاء بتحليلات واضحة من قاعدة البيانات - بدون عرض استعلامات SQL للمستخدم النهائي.
 
 </div>
+
+**🎯 Purpose:** Respond to customer inquiries with clear data analyses from the database - without showing SQL queries to end users.
+
+**👥 Target Users:** Non-technical end users who want clear data insights, not SQL queries or technical details.
 
 ## 📋 Table of Contents / جدول المحتويات
 
@@ -27,51 +33,146 @@
 
 <div dir="rtl">
 
-**Chat with Database** هو نظام متقدم يسمح للمستخدمين بالتفاعل مع قواعد بيانات PostgreSQL باستخدام اللغة الطبيعية. يستخدم النظام الذكاء الاصطناعي (LLM) لفهم الأسئلة، توليد استعلامات SQL، تنفيذها، وتقديم الإجابات بشكل احترافي مع إمكانية تصور البيانات وتحليلها إحصائياً.
+**Chat with Database** هو نظام ذكي مصمم خصيصاً للرد على استفسارات العملاء من خلال تقديم تحليلات واضحة ومباشرة من قاعدة البيانات. النظام يستخدم الذكاء الاصطناعي لفهم أسئلة العملاء باللغة الطبيعية، ثم يقوم تلقائياً بتحليل البيانات وإرجاع إجابات واضحة وسهلة الفهم.
 
-### المشكلة التي يحلها المشروع:
-- صعوبة كتابة استعلامات SQL للمستخدمين غير التقنيين
-- الحاجة لفهم بنية قاعدة البيانات قبل كتابة الاستعلامات
-- صعوبة تحليل البيانات وتصورها
-- الحاجة لنظام آمن يمنع الاستعلامات الضارة
+### 🎯 الهدف الأساسي:
+**النظام مصمم للمستخدمين النهائيين غير التقنيين** - العملاء الذين يريدون الحصول على بيانات واضحة دون الحاجة لفهم قواعد البيانات أو استعلامات SQL.
 
-### الحل:
-- واجهة محادثة طبيعية باللغة العربية والإنجليزية
-- توليد تلقائي لاستعلامات SQL آمنة
-- تحليل إحصائي تلقائي للبيانات
-- تصور البيانات برسوم بيانية
-- نظام أمان متقدم لمنع الاستعلامات الضارة
+### ✨ ما يقدمه النظام:
+- **إجابات واضحة ومباشرة**: يحصل المستخدم على تحليلات وبيانات واضحة باللغة الطبيعية
+- **لا توجد استعلامات تقنية**: المستخدم النهائي لا يرى أي استعلامات SQL أو تفاصيل تقنية
+- **تحليلات جاهزة**: النظام يقوم بتحليل البيانات تلقائياً ويقدم النتائج بشكل مفهوم
+- **لغة الأعمال**: جميع الإجابات مكتوبة بلغة الأعمال وليس المصطلحات التقنية
+
+### 🔒 الأمان والخصوصية:
+- إخفاء كامل للتفاصيل التقنية (أسماء الجداول والأعمدة)
+- حماية من الاستعلامات الضارة
+- التحقق الأمني التلقائي
+
+### 💡 مثال على الاستخدام:
+**سؤال العميل:** "كم عدد العملاء لدينا هذا الشهر؟"
+
+**ما يراه العميل:**
+> "يوجد لديك 1,234 عميل نشط هذا الشهر، بزيادة 15% عن الشهر الماضي."
+
+**ما لا يراه العميل:**
+- ❌ استعلام SQL
+- ❌ أسماء الجداول
+- ❌ أسماء الأعمدة
+- ❌ أي تفاصيل تقنية
 
 </div>
 
-**Chat with Database** is an advanced system that allows users to interact with PostgreSQL databases using natural language. The system uses AI (LLM) to understand questions, generate SQL queries, execute them, and provide professional answers with data visualization and statistical analysis capabilities.
+**Chat with Database** is an intelligent system designed specifically to respond to customer inquiries by providing clear and direct data analyses from the database. The system uses AI to understand customer questions in natural language, then automatically analyzes the data and returns clear, easy-to-understand answers.
 
-### Problem it solves:
-- Difficulty writing SQL queries for non-technical users
-- Need to understand database schema before writing queries
-- Difficulty analyzing and visualizing data
-- Need for a secure system that prevents malicious queries
+### 🎯 Core Purpose:
+**The system is designed for non-technical end users** - customers who want clear data without needing to understand databases or SQL queries.
 
-### Solution:
-- Natural language chat interface in Arabic and English
-- Automatic generation of secure SQL queries
-- Automatic statistical analysis of data
-- Data visualization with charts
-- Advanced security system to prevent malicious queries
+### ✨ What the System Provides:
+- **Clear and Direct Answers**: Users get clear analyses and data in natural language
+- **No Technical Queries**: End users never see SQL queries or technical details
+- **Ready-made Analyses**: The system automatically analyzes data and presents results in an understandable format
+- **Business Language**: All answers are written in business language, not technical terminology
+
+### 🔒 Security & Privacy:
+- Complete hiding of technical details (table names, column names)
+- Protection from malicious queries
+- Automatic security validation
+
+### 💡 Usage Example:
+**Customer Question:** "How many customers do we have this month?"
+
+**What the Customer Sees:**
+> "You have 1,234 active customers this month, a 15% increase from last month."
+
+**What the Customer Never Sees:**
+- ❌ SQL query
+- ❌ Table names
+- ❌ Column names
+- ❌ Any technical details
+
+---
+
+## 🔄 How It Works / كيف يعمل النظام
+
+<div dir="rtl">
+
+### للمستخدم النهائي (العميل):
+
+1. **يسأل سؤالاً بسيطاً** باللغة الطبيعية:
+   - "كم عدد العملاء لدينا؟"
+   - "ما هي المبيعات هذا الشهر؟"
+   - "أعطني قائمة بأفضل المنتجات مبيعاً"
+
+2. **يحصل على إجابة واضحة** بدون أي تفاصيل تقنية:
+   - "يوجد لديك 1,234 عميل نشط"
+   - "المبيعات هذا الشهر بلغت 50,000 ريال"
+   - قائمة واضحة بالمنتجات مع الأرقام
+
+3. **لا يرى أبداً**:
+   - ❌ استعلامات SQL
+   - ❌ أسماء الجداول
+   - ❌ أسماء الأعمدة
+   - ❌ أي تفاصيل تقنية
+
+### ما يحدث خلف الكواليس (للمطورين):
+
+1. النظام يفهم السؤال باستخدام الذكاء الاصطناعي
+2. يولد استعلام SQL تلقائياً (مخفي عن المستخدم)
+3. ينفذ الاستعلام على قاعدة البيانات
+4. يحلل النتائج إحصائياً
+5. ينسق الإجابة بلغة الأعمال الواضحة
+6. يخفي جميع التفاصيل التقنية
+
+</div>
+
+### For End Users (Customers):
+
+1. **Ask a simple question** in natural language:
+   - "How many customers do we have?"
+   - "What are the sales this month?"
+   - "Show me the best-selling products"
+
+2. **Get a clear answer** without any technical details:
+   - "You have 1,234 active customers"
+   - "Sales this month reached 50,000 SAR"
+   - Clear list of products with numbers
+
+3. **Never see**:
+   - ❌ SQL queries
+   - ❌ Table names
+   - ❌ Column names
+   - ❌ Any technical details
+
+### Behind the Scenes (For Developers):
+
+1. System understands the question using AI
+2. Automatically generates SQL query (hidden from user)
+3. Executes query on database
+4. Analyzes results statistically
+5. Formats answer in clear business language
+6. Hides all technical details
 
 ---
 
 ## ✨ Features / المميزات
+
+### 👥 Designed for End Users / مصمم للمستخدمين النهائيين
+- **No Technical Knowledge Required**: Users don't need to know SQL or database structure
+- **Natural Language Only**: Ask questions in plain Arabic or English
+- **Clear Business Answers**: Get data insights in business-friendly language
+- **Hidden Technical Details**: SQL queries, table names, and technical terms are never shown to end users
 
 ### 🌐 Multi-Language Support / دعم متعدد اللغات
 - **Arabic & English** support for questions and answers
 - Automatic language detection
 - Natural language processing
 
-### 🤖 AI-Powered SQL Generation / توليد SQL بالذكاء الاصطناعي
-- Uses **OpenAI GPT-4** or **Google Gemini** for SQL generation
-- Context-aware query generation using RAG (Retrieval Augmented Generation)
+### 🤖 AI-Powered Analysis / تحليل بالذكاء الاصطناعي
+- Uses **OpenAI GPT-4** or **Google Gemini** for intelligent data analysis
+- Context-aware analysis using RAG (Retrieval Augmented Generation)
 - Automatic schema understanding and retrieval
+- **Behind the scenes**: Generates SQL queries internally (never shown to users)
 
 ### 🔒 Security Features / ميزات الأمان
 - SQL injection prevention
@@ -79,12 +180,14 @@
 - Sensitive data detection
 - Allowed operations restriction (SELECT only by default)
 - Query timeout protection
+- **Privacy Protection**: Technical details are completely hidden from end users
 
 ### 📊 Data Analysis & Visualization / تحليل وتصور البيانات
-- **Statistical Analysis**: Automatic statistical summaries
+- **Statistical Analysis**: Automatic statistical summaries presented in clear language
 - **Data Visualization**: Generate charts and graphs using PandasAI
 - **Excel Export**: Export query results to Excel files
 - **Smart Data Preview**: Preview data with pagination
+- **Business Insights**: Transform raw data into actionable business insights
 
 ### 💾 Database Support / دعم قواعد البيانات
 - **PostgreSQL**: Main database for queries
@@ -326,6 +429,9 @@ new_version/
 ├── DOCKER_SETUP.md               # Docker setup guide
 ├── QUICK_START_DOCKER.md         # Quick start guide
 ├── SERVICE_REPORT.md             # Service documentation
+├── DATABASE_SCHEMA.md            # Database schema documentation
+├── API_USAGE.md                  # API usage guide (Arabic)
+├── API_EXAMPLES.md               # API examples and quick reference
 │
 └── README.md                     # This file
 ```
@@ -404,7 +510,7 @@ DEBUG=false
 LOG_LEVEL=INFO
 
 # Security
-API_KEY=your-secret-api-key
+API_KEY=your-secret-api-key  # Required for API authentication (X-API-Key header)
 JWT_SECRET=your-jwt-secret
 
 # PostgreSQL Database
@@ -416,7 +522,7 @@ DB_PASSWORD=your_password
 # OR use full connection string:
 POSTGRESQL_URL=postgresql://user:password@host:port/database
 
-# MongoDB (Optional - for sessions)
+# MongoDB (Required - for sessions and conversation history)
 MONGO_URI=mongodb://localhost:27017/
 MONGO_DB_NAME=chat_db
 
@@ -434,7 +540,8 @@ GEMINI_TEMPERATURE=0.3
 # SQL Settings
 SQL_TIMEOUT_SECONDS=30
 SQL_MAX_ROWS=1000
-SHOW_SQL_TO_USER=true  # Set false in production
+SHOW_SQL_TO_USER=false  # ⚠️ IMPORTANT: Set to false in production to hide SQL queries from end users
+                       # The system is designed for non-technical users who should only see clear business answers
 
 # RAG Settings
 EMBEDDING_MODEL=text-embedding-ada-002
@@ -444,7 +551,9 @@ RAG_TOP_K=5
 ### Database Setup / إعداد قاعدة البيانات
 
 1. **PostgreSQL**: Ensure your database is accessible and contains the data you want to query
-2. **MongoDB** (Optional): For session management and conversation history
+   - **Test Database**: The system uses **DVD Rental** sample database for testing
+   - See [DATABASE_SCHEMA.md](./DATABASE_SCHEMA.md) for detailed database schema documentation
+2. **MongoDB** (Required): For session management and conversation history
 
 ---
 
@@ -470,9 +579,12 @@ Interactive API documentation is available at:
 
 ### Example Request / مثال على الطلب
 
+**⚠️ Important:** All API requests require `X-API-Key` header for authentication.
+
 ```bash
 curl -X POST "http://localhost:3300/api/v1/chat" \
   -H "Content-Type: application/json" \
+  -H "X-API-Key: your-secret-api-key" \
   -d '{
     "question": "كم عدد العملاء في قاعدة البيانات؟",
     "session_id": "optional-session-id",
@@ -481,13 +593,17 @@ curl -X POST "http://localhost:3300/api/v1/chat" \
   }'
 ```
 
+**Note:** See [API_USAGE.md](./API_USAGE.md) for detailed API usage guide (Arabic) and [API_EXAMPLES.md](./API_EXAMPLES.md) for quick examples.
+
 ### Example Response / مثال على الاستجابة
+
+**⚠️ Important Note:** In production, `sql_query` is typically hidden from end users (controlled by `SHOW_SQL_TO_USER=false` in `.env`). The system is designed to show only clear, business-friendly answers.
 
 ```json
 {
   "success": true,
-  "answer": "يوجد 1,234 عميل في قاعدة البيانات.",
-  "sql_query": "SELECT COUNT(*) FROM customers;",
+  "answer": "يوجد 1,234 عميل نشط في قاعدة البيانات. هذا يمثل زيادة بنسبة 12% مقارنة بالشهر الماضي.",
+  "sql_query": "SELECT COUNT(*) FROM customers;",  // ⚠️ Hidden from end users in production
   "data": {
     "columns": ["count"],
     "rows": [[1234]],
@@ -506,15 +622,46 @@ curl -X POST "http://localhost:3300/api/v1/chat" \
 }
 ```
 
+**What End Users See:**
+- ✅ Clear answer in natural language: "يوجد 1,234 عميل نشط..."
+- ✅ Data results in a structured format
+- ✅ Business insights and analysis
+
+**What End Users DON'T See (in production):**
+- ❌ SQL queries
+- ❌ Database table names
+- ❌ Column names
+- ❌ Technical implementation details
+
 ---
 
 ## 📚 API Documentation / توثيق API
+
+### Authentication / المصادقة
+
+All API endpoints (except `/health` and `/`) require authentication using `X-API-Key` header:
+
+```
+X-API-Key: your-secret-api-key
+```
+
+The API key is configured in `.env` file as `API_KEY`.
+
+**For detailed API usage guide, see:**
+- [API_USAGE.md](./API_USAGE.md) - Complete API documentation in Arabic
+- [API_EXAMPLES.md](./API_EXAMPLES.md) - Quick examples and code snippets
 
 ### Endpoints / النقاط الطرفية
 
 #### `POST /api/v1/chat`
 
 Send a question to the chat API.
+
+**Headers:**
+```
+Content-Type: application/json
+X-API-Key: your-secret-api-key
+```
 
 **Request Body:**
 ```json
@@ -667,26 +814,31 @@ curl http://localhost:3300/health
 ### 1. Question Classification / تصنيف الأسئلة
 - Classifies questions as database-related or general
 - Routes to appropriate handler
+- **User Experience**: End users just ask questions naturally, no need to specify query type
 
-### 2. SQL Generation / توليد SQL
+### 2. SQL Generation / توليد SQL (خلف الكواليس)
 - Uses LLM with RAG context
-- Generates optimized SQL queries
+- Generates optimized SQL queries automatically
 - Handles complex queries with joins
+- **User Experience**: SQL generation is completely invisible to end users - they only see clear answers
 
 ### 3. Statistical Analysis / التحليل الإحصائي
 - Automatic statistical summaries
 - Mean, median, mode calculations
 - Distribution analysis
+- **User Experience**: Statistics are presented in clear, business-friendly language (e.g., "Average sales: 5,000 SAR")
 
 ### 4. Data Visualization / تصور البيانات
 - Automatic chart generation
 - Supports multiple chart types
 - PandasAI integration
+- **User Experience**: Users can request charts by asking "أعطني رسم بياني" or "show me a chart"
 
 ### 5. Excel Export / تصدير Excel
 - Export query results to Excel
 - Formatted Excel files
 - Download links
+- **User Experience**: Users can request Excel export, and get a clean, formatted file without seeing any SQL
 
 ---
 
