@@ -499,6 +499,8 @@ python -m app.main
 
 ### Environment Variables / متغيرات البيئة
 
+⚠️ **Security Warning**: Never commit your `.env` file to version control. It contains sensitive information like database credentials, API keys, and server configuration.
+
 Create a `.env` file based on `.env.example`:
 
 ```env
@@ -510,30 +512,34 @@ DEBUG=false
 LOG_LEVEL=INFO
 
 # Security
+# ⚠️ IMPORTANT: Generate strong, unique keys for production
 API_KEY=your-secret-api-key  # Required for API authentication (X-API-Key header)
-JWT_SECRET=your-jwt-secret
+JWT_SECRET=your-jwt-secret   # Generate a secure random string for production
 
 # PostgreSQL Database
-DB_HOST=localhost
-DB_PORT=5432
+# ⚠️ IMPORTANT: Replace with your actual database connection details
+DB_HOST=your-database-host
+DB_PORT=your-database-port
 DB_NAME=your_database
-DB_USER=postgres
-DB_PASSWORD=your_password
+DB_USER=your_database_user
+DB_PASSWORD=your_database_password
 # OR use full connection string:
 POSTGRESQL_URL=postgresql://user:password@host:port/database
 
 # MongoDB (Required - for sessions and conversation history)
-MONGO_URI=mongodb://localhost:27017/
+# ⚠️ IMPORTANT: Replace with your actual MongoDB connection details
+MONGO_URI=mongodb://your-mongodb-host:port/
 MONGO_DB_NAME=chat_db
 
 # LLM Configuration
+# ⚠️ IMPORTANT: Keep your API keys secure and never expose them
 # Option 1: OpenAI
-OPENAI_API_KEY=sk-...
+OPENAI_API_KEY=your-openai-api-key-here
 LLM_MODEL=gpt-4
 LLM_TEMPERATURE=0.0
 
 # Option 2: Google Gemini (for question refinement and response formatting)
-GEMINI_API_KEY=your-gemini-api-key
+GEMINI_API_KEY=your-gemini-api-key-here
 GEMINI_MODEL=gemini-2.0-flash
 GEMINI_TEMPERATURE=0.3
 
@@ -569,20 +575,22 @@ docker-compose up -d
 python -m app.main
 ```
 
-The API will be available at: `http://localhost:3300`
+The API will be available at your configured server address and port.
 
 ### API Documentation / توثيق API
 
 Interactive API documentation is available at:
-- **Swagger UI**: http://localhost:3300/docs
-- **ReDoc**: http://localhost:3300/redoc
+- **Swagger UI**: `http://your-server-address:port/docs`
+- **ReDoc**: `http://your-server-address:port/redoc`
+
+⚠️ **Note**: Replace `your-server-address:port` with your actual server configuration.
 
 ### Example Request / مثال على الطلب
 
 **⚠️ Important:** All API requests require `X-API-Key` header for authentication.
 
 ```bash
-curl -X POST "http://localhost:3300/api/v1/chat" \
+curl -X POST "http://your-server-address:port/api/v1/chat" \
   -H "Content-Type: application/json" \
   -H "X-API-Key: your-secret-api-key" \
   -d '{
@@ -592,6 +600,8 @@ curl -X POST "http://localhost:3300/api/v1/chat" \
     "include_data": true
   }'
 ```
+
+⚠️ **Important**: Replace `your-server-address:port` with your actual server address and port.
 
 **Note:** See [API_USAGE.md](./API_USAGE.md) for detailed API usage guide (Arabic) and [API_EXAMPLES.md](./API_EXAMPLES.md) for quick examples.
 
@@ -781,8 +791,10 @@ docker-compose down -v
 pytest
 
 # Test API endpoint
-curl http://localhost:3300/health
+curl http://your-server-address:port/health
 ```
+
+⚠️ **Note**: Replace `your-server-address:port` with your actual server configuration.
 
 ---
 
@@ -806,6 +818,62 @@ curl http://localhost:3300/health
 4. **Row Limit**
    - Maximum rows per query
    - Prevents excessive data retrieval
+
+### 🔐 Security Best Practices / أفضل ممارسات الأمان
+
+<div dir="rtl">
+
+#### ⚠️ معلومات حساسة يجب حمايتها:
+
+1. **معلومات الاتصال بقواعد البيانات:**
+   - ❌ لا تكشف عناوين IP للسيرفرات
+   - ❌ لا تكشف أرقام المنافذ (Ports)
+   - ❌ لا تكشف أسماء المستخدمين أو كلمات المرور
+   - ✅ استخدم متغيرات البيئة (`.env`) لحفظ هذه المعلومات
+   - ✅ تأكد من أن ملف `.env` موجود في `.gitignore`
+
+2. **مفاتيح API:**
+   - ❌ لا ترفع مفاتيح API الحقيقية إلى GitHub
+   - ❌ لا تكتب مفاتيح API في الكود
+   - ✅ استخدم متغيرات البيئة فقط
+   - ✅ استخدم مفاتيح مختلفة للبيئة التطويرية والإنتاجية
+
+3. **معلومات السيرفر:**
+   - ❌ لا تكشف عناوين IP الداخلية أو الخارجية
+   - ❌ لا تكشف تفاصيل البنية التحتية
+   - ✅ استخدم placeholders في التوثيق (مثل `your-server-address`)
+
+4. **ملفات الإعدادات:**
+   - ✅ تأكد من أن `.env` موجود في `.gitignore`
+   - ✅ استخدم `.env.example` كقالب بدون معلومات حساسة
+   - ✅ راجع جميع الملفات قبل الرفع إلى GitHub
+
+</div>
+
+#### ⚠️ Sensitive Information to Protect:
+
+1. **Database Connection Information:**
+   - ❌ Never expose server IP addresses
+   - ❌ Never expose port numbers
+   - ❌ Never expose usernames or passwords
+   - ✅ Use environment variables (`.env`) to store this information
+   - ✅ Ensure `.env` is in `.gitignore`
+
+2. **API Keys:**
+   - ❌ Never commit real API keys to GitHub
+   - ❌ Never hardcode API keys in code
+   - ✅ Use environment variables only
+   - ✅ Use different keys for development and production
+
+3. **Server Information:**
+   - ❌ Never expose internal or external IP addresses
+   - ❌ Never expose infrastructure details
+   - ✅ Use placeholders in documentation (e.g., `your-server-address`)
+
+4. **Configuration Files:**
+   - ✅ Ensure `.env` is in `.gitignore`
+   - ✅ Use `.env.example` as a template without sensitive data
+   - ✅ Review all files before pushing to GitHub
 
 ---
 
