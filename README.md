@@ -14,6 +14,86 @@
 
 **👥 Target Users:** Non-technical end users who want clear data insights, not SQL queries or technical details.
 
+---
+
+## 🚀 Quick Explanation / شرح سريع
+
+<div dir="rtl">
+
+### 💡 ما هو النظام؟
+
+نظام ذكي يجيب على أسئلة العملاء باللغة الطبيعية ويعطيهم بيانات وتحليلات واضحة من قاعدة البيانات **بدون أن يروا أي تفاصيل تقنية**.
+
+### 🎯 الفكرة الأساسية في 30 ثانية:
+
+1. **العميل يسأل**: "كم عدد العملاء لدينا هذا الشهر؟"
+2. **النظام يفهم** السؤال باستخدام الذكاء الاصطناعي
+3. **يستخرج البيانات** من قاعدة البيانات (خلف الكواليس)
+4. **يعطي إجابة واضحة**: "لديك 1,234 عميل نشط هذا الشهر"
+
+**العميل لا يرى**: استعلامات SQL، أسماء الجداول، أو أي تفاصيل تقنية
+
+### ⚡ كيف يعمل؟ (في سطرين)
+
+**للعميل (المستخدم النهائي):**
+- يسأل سؤالاً عادي → يحصل على إجابة واضحة مع البيانات
+
+**للنظام (خلف الكواليس):**
+- يفهم السؤال → يولد SQL تلقائياً → يستخرج البيانات → يحللها → ينسق الإجابة بلغة الأعمال
+
+### 🎁 ما المميز؟
+
+✅ **لا يحتاج خبرة تقنية** - أي شخص يستطيع السؤال  
+✅ **إجابات واضحة** - بلغة الأعمال وليس المصطلحات التقنية  
+✅ **آمن تماماً** - التفاصيل التقنية مخفية بالكامل  
+✅ **دعم عربي/إنجليزي** - اسأل بأي لغة  
+
+### 📊 مثال عملي:
+
+**سؤال:** "ما هي أفضل المنتجات مبيعاً هذا الشهر؟"  
+**إجابة:** "أفضل 5 منتجات مبيعاً هذا الشهر: منتج A (150 قطعة، 45,000 ريال)، منتج B..."  
+**مع رسم بياني** (إذا طلب العميل)
+
+---
+
+</div>
+
+### 💡 What is This System?
+
+An intelligent system that answers customer questions in natural language and provides clear data analyses from the database **without showing any technical details**.
+
+### 🎯 Core Idea in 30 Seconds:
+
+1. **Customer asks**: "How many customers do we have this month?"
+2. **System understands** the question using AI
+3. **Extracts data** from database (behind the scenes)
+4. **Returns clear answer**: "You have 1,234 active customers this month"
+
+**Customer never sees**: SQL queries, table names, or any technical details
+
+### ⚡ How Does It Work? (In Two Lines)
+
+**For Customer (End User):**
+- Asks a simple question → Gets a clear answer with data
+
+**For System (Behind the Scenes):**
+- Understands question → Auto-generates SQL → Extracts data → Analyzes → Formats answer in business language
+
+### 🎁 What's Special?
+
+✅ **No Technical Knowledge Required** - Anyone can ask questions  
+✅ **Clear Answers** - In business language, not technical jargon  
+✅ **Fully Secure** - Technical details completely hidden  
+✅ **Arabic/English Support** - Ask in any language  
+
+### 📊 Real Example:
+
+**Question:** "What are the best-selling products this month?"  
+**Answer:** "Top 5 best-selling products this month: Product A (150 units, 45,000 SAR), Product B..."  
+**With Chart** (if customer requests)
+
+---
+
 ## 📋 Table of Contents / جدول المحتويات
 
 - [Overview / نظرة عامة](#overview)
@@ -967,3 +1047,4 @@ Start now and enjoy interacting with your database using natural language!
 ---
 
 **Made with ❤️ by RobotReception**
+# agent
